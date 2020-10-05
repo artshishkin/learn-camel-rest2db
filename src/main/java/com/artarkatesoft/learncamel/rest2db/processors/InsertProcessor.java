@@ -14,6 +14,7 @@ public class InsertProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         String input = exchange.getIn().getBody(String.class);
+
         log.info("Input is: {}", input);
 
         JSONParser parser = new JSONParser();
