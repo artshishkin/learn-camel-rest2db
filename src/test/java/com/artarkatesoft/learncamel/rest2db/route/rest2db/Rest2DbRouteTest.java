@@ -39,11 +39,8 @@ class Rest2DbRouteTest extends CamelTestSupport {
 
     @Test
     void rest2DbTest() {
-        //given
-        String countryCode = "us";
-
         //when
-        ArrayList arrayList = template.requestBody("direct:restCall", countryCode, ArrayList.class);
+        ArrayList arrayList = consumer.receiveBody("direct:outputDb", ArrayList.class);
 
         //then
         assertNotNull(arrayList);
